@@ -47,6 +47,7 @@ composer install
 If you want to set-up older versions, e.g. 4.0, complete the following steps:
 
 ```
+cd var/versions
 git clone git@github.com:bolt/docs.git 4.0
 ```
 
