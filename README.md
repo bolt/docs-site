@@ -1,19 +1,15 @@
 Bolt Documentation Site & Content
 =================================
 
-This repository is for both the site, and content, of [Bolt][bolt], and should 
+This repository is the first part (base) for the site of [Bolt][bolt], and should 
 be considered a counterpart of the [Bolt Core repository][repo].
+
+The second part (content) can be found [here](https://github.com/bolt/docs)
 
 The documentation uses the [Markdown][markdown] format.
 
 There is no need to build anything to generate HTML. We parse the markdown with
 PHP.
-
-Since this repository is set up to use git's worktree feature, it is advised to
-use git version 2.5 or later.
-
-**Note:** Git worktree is a dumpster fire. If a branch breaks, see below on how to 
-fix it.
 
 Updating Documentation
 ----------------------
@@ -34,36 +30,27 @@ Local site set-up
 To run the site locally you need to complete the following steps:
 
   * Create the repository with `git clone`
-  * Create worktrees for required versions
-  * Run `composer update` to install required vendor libraries
+  * A second 'git clone' to install the content
+  * Run `composer install` to install required vendor libraries
 
 ### Site Set-up
 
 ```
-git clone git@github.com:bolt/docs.git bolt-docs
-cd bolt-docs
-git checkout site
+git clone git@github.com:bolt/docs-site.git bolt-docs
+cd var/versions
+git clone git@github.com:bolt/docs.git 5.0
 composer install
 ```
 
-### Worktrees Set-up
+### Set-up different versions
 
-An example that sets up work trees for version 4.0 of the documentation
-branches:
-
-```
-git worktree add -b 4.0 var/versions/4.0
-```
-
-Alternatively, if you have `grep` and `sed` installed, this will set up all of
-the version worktrees for you
+If you want to set-up older versions, e.g. 4.0, complete the following steps:
 
 ```
-for VERSION in $(git branch --remotes --list | grep -E "^  origin\/[2-9]" | sed 's/origin\///g'); do
-    git branch $VERSION origin/$VERSION
-    git worktree add var/versions/$VERSION $VERSION
-done
+git clone git@github.com:bolt/docs.git 4.0
 ```
+
+Then, on your local site you can choose 4.0 at the dropdown menu on the upper right side.
 
 ### Configure Default Version
 
@@ -118,34 +105,6 @@ Then, build the assets:
 
 ```bash
 npm run build 
-```
-
-## If a "worktree" breaks, here's how to fix it
-
-As mentioned above, Git's worktree feature is iffy at best. It might 
-break all of a sudden, with no apparent way to fix it:
-
-```bash
-$ git pull
-fatal: not a git repository: /Users/bob/Sites/docs/.git/worktrees/XXX
-```
-
-To fix it, run the following commands, replacing `XXX` with the actual 
-name of your broken worktree branch.
-
-```bash 
-cd ..
-rm -rf XXX
-git worktree prune
-git branch -D XXX
-git worktree add -b XXX XXX
-cd XXX
-
-# note: you are now in a new `XXX` folder, but you need to `reset` 
-# it to actually show `XXX`, and not a botched copy of another branch
-git checkout master
-git branch -D XXX
-git checkout XXX
 ```
 
 [bolt]: http://docs.bolt.cm/
