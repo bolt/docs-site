@@ -42,7 +42,7 @@ git clone git@github.com:bolt/docs.git 5.0
 composer install
 ```
 
-### Set-up different versions
+### Set-up older versions
 
 If you want to set-up older versions, e.g. 4.0, complete the following steps:
 
