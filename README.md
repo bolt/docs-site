@@ -50,7 +50,7 @@ If you want to set-up older versions, e.g. 4.0, complete the following steps:
 git clone git@github.com:bolt/docs.git 4.0
 ```
 
-Then, on your local site you can choose 4.0 at the dropdown menu on the upper right side.
+Then, on your local site you are able to choose version 4.0 at the dropdown menu on the upper right side.
 
 ### Configure Default Version
 
