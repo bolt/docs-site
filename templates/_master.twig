@@ -6,13 +6,13 @@
 <html xml:lang="en" lang="en">
 <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{{ title|raw }} | Bolt Documentation</title>
     <meta name="DCTERMS.title" content="Bolt CMS"/>
     <meta name="robots" content="noydir, noodp"/>
 
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon-16x16.png') }}">
@@ -22,33 +22,36 @@
     <meta name="msapplication-config" content="{{ asset('images/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400italic,600,600italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400italic,600,600italic'
+          rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="{{ asset('assets/app.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('assets/app.css') }}" type="text/css" media="all"/>
 
-{% block canonical %}
-{% endblock canonical %}
+    {% block canonical %}
+    {% endblock canonical %}
 
-{% block extrahead %}
-{% endblock extrahead %}
+    {% block extrahead %}
+    {% endblock extrahead %}
 
-{% include '_headerscripts.twig' %}
+    {% include '_headerscripts.twig' %}
 
 </head>
 
 <body class="body-docs">
 
-    {% include '_header.twig' %}
+{% include '_header.twig' %}
 
-    <div class="docs columns is-gapless is-desktop">
-{% block content %}
-    (content goes here)
-{% endblock content %}
-    </div>
+<div class="docs columns is-gapless is-desktop">
+    {% block content %}
+        (content goes here)
+    {% endblock content %}
+</div>
 
-    {% include '_footer.twig' %}
+{% include '_back_to_top.twig' %}
 
-    <script src="{{ asset('assets/app.js') }}"></script>
+{% include '_footer.twig' %}
+
+<script src="{{ asset('assets/app.js') }}"></script>
 
 {% block extrafooter %}
 {% endblock extrafooter %}

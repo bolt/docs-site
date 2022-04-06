@@ -5,6 +5,15 @@
     "cocur/slugify": {
         "version": "v2.5"
     },
+    "composer/package-versions-deprecated": {
+        "version": "0.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "0.0",
+            "ref": ""
+        }
+    },
     "composer/semver": {
         "version": "1.4.2"
     },
@@ -145,6 +154,15 @@
     },
     "symfony/dotenv": {
         "version": "v4.0.0"
+    },
+    "symfony/error-handler": {
+        "version": "0.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "0.0",
+            "ref": ""
+        }
     },
     "symfony/event-dispatcher": {
         "version": "v4.0.1"
