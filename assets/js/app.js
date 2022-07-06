@@ -3,6 +3,8 @@ import '../scss/app.scss';
 require('js-cookie'); // 2.3 KiB
 require('smoothscroll'); // 1.9 KiB
 
+require('./back-to-top');
+
 // Enable "baguettebox" thingies.
 require('./baguettebox'); // 9.7 KiB
 

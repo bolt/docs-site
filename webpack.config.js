@@ -25,6 +25,8 @@ Encore
         },
     })
     .enableSassLoader()
+
+    .autoProvidejQuery()
 ;
 
 const config = Encore.getWebpackConfig();
